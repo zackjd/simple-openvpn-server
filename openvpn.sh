@@ -134,12 +134,9 @@ dh dh.pem
 tls-auth ta.key 0
 topology subnet
 server 10.0.8.0 255.255.255.0
+push "route 10.0.0.0 255.255.255.0"
 ifconfig-pool-persist ipp.txt" > /etc/openvpn/server.conf
-echo 'push "redirect-gateway def1 bypass-dhcp"' >> /etc/openvpn/server.conf
 
-# DNS
-echo "push \"dhcp-option DNS $DNS1\"" >> /etc/openvpn/server.conf
-echo "push \"dhcp-option DNS $DNS2\"" >> /etc/openvpn/server.conf
 echo "keepalive 10 120
 cipher AES-256-CBC
 
