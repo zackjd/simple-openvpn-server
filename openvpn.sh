@@ -2,8 +2,6 @@
 
 # defaults 
 ADMINPASSWORD="secret"
-DNS1="8.8.8.8"
-DNS2="8.8.4.4"
 PROTOCOL=udp
 PORT=1194
 HOST=$(wget -4qO- "http://whatismyip.akamai.com/")
@@ -14,12 +12,6 @@ do
 	case $i in
 		--adminpassword=*)
 		ADMINPASSWORD="${i#*=}"
-		;;
-		--dns1=*)
-		DNS1="${i#*=}"
-		;;
-		--dns2=*)
-		DNS2="${i#*=}"
 		;;
 		--vpnport=*)
 		PORT="${i#*=}"
