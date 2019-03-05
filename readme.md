@@ -10,13 +10,18 @@ A special thanks goes out to the folks behind [openvpn-install](https://github.c
 The scripts assumes that there is NOT an instance of OpenVPN already installed on the machine and that port 443 is not in use by another web server for HTTPS. Likewise, this script was built for Redhat 6+ and current Debian/Ubuntu distros.
 
 
+## Install VM on Azure
+
+Last used settings:
+Image=Ubuntu Server 18.04 LTS
+Size=Standard B1s (1vcpu, 1G ram)
+Authentication Type=SSH public key
+OS disk type=Standard HDD
+Subnet=10.0.0.0/24
+Public IP=new
+
+
 ## Installing OpenVPN
-
-Optionally, you can do a completely automated deployment to Azure and skip past the installation to **Managing Clients**.
-
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fzackjd%2Fsimple-openvpn-server%2Fmaster%2Fopenvpn-template.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
-
-Otherwise, use the installer:
 
 1. Pull up a terminal or SSH into the target server.
 
