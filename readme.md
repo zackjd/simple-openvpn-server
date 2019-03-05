@@ -47,7 +47,7 @@ Otherwise, use the installer:
 	Example:
 
 	````
-	./openvpn.sh --adminpassword=mypassword --host=myvpn.example.com
+	./openvpn.sh --adminpassword=mypassword --host=myvpn.example.com --vpnnetwork=10.0.8.0 --route=10.0.0.0
 	````
 
 
