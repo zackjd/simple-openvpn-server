@@ -14,14 +14,14 @@ The scripts assumes that there is NOT an instance of OpenVPN already installed o
 
 Last used settings:
 
-	````
+	```
 	Image=Ubuntu Server 18.04 LTS
 	Size=Standard B1s (1vcpu, 1G ram)
 	Authentication Type=SSH public key
 	OS disk type=Standard HDD
 	Subnet=10.0.0.0/24
 	Public IP=new
-	````
+	```
 	
 ## Installing OpenVPN
 
