@@ -12,8 +12,9 @@ The scripts assumes that there is NOT an instance of OpenVPN already installed o
 
 ## Install VM on Azure
 
+Last used settings:
+
 	````
-	Last used settings:
 	Image=Ubuntu Server 18.04 LTS
 	Size=Standard B1s (1vcpu, 1G ram)
 	Authentication Type=SSH public key
