@@ -22,9 +22,6 @@ The scripts assumes that there is NOT an instance of OpenVPN already installed o
 	Public IP=new
 	````
 	
-
-
-
 ## Installing OpenVPN
 
 1. Pull up a terminal or SSH into the target server.
