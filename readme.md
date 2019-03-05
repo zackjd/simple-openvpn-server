@@ -62,9 +62,9 @@ Public IP=new
 
 	**adminpassword** -- This is the admin password for the website for managing clients. The default is **password**.
 
-	**dns1** -- The first dns server assigned to the clients. The default is **8.8.8.8**.
+	**vpnnetwork** -- The ip network pool for the vpn connections **10.0.8.0**.
 
-	**dns2** -- The first dns server assigned to the clients. The default is **8.8.4.4**.
+	**route** -- The network behind the vpn server you want to access **10.0.0.0**.
 
 	**vpnport** -- The port to be used by OpenVPN. 1194 may be blocked by some firewalls, so this is customizable. The default port is **1194**.
 
@@ -74,7 +74,7 @@ Public IP=new
 
 1. Let the installer finish. This may take a few minutes, as the intaller generates a few keys to set up a certificate authority (CA) that is used to assign certificates to the clients.
 
-1. If the server you are installing this on is behind a firewall, be sure that you forward the external ports from the firewall to the ports on the server for the VPN. Optionally, if you want to be able to manage the VPN from outside the firewall, forward a port to 443 on the VPN Server.
+1. If the server you are installing this on is behind a firewall, be sure that you forward the external ports from the firewall to the ports on the server for the VPN (1194).
 
 
 ## Managing Profiles
