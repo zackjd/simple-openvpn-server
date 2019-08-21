@@ -76,6 +76,7 @@ Public IP=new
 
 1. If the server you are installing this on is behind a firewall, be sure that you forward the external ports from the firewall to the ports on the server for the VPN (1194).
 
+!!!iptables-save
 
 ## Managing Profiles
 
