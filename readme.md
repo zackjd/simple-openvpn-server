@@ -83,8 +83,11 @@ iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
 iptables-save
 
 cd /etc/openvpn
+
 cd <easyrsa folder>
+	
 ./easyrsa gen-crl
+
 systemctl restart openvpn
 
 ## Managing Profiles
