@@ -76,6 +76,10 @@ Public IP=new
 
 1. If the server you are installing this on is behind a firewall, be sure that you forward the external ports from the firewall to the ports on the server for the VPN (1194).
 
+iptables -t nat -L
+
+iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
+
 !!!iptables-save
 
 ## Managing Profiles
