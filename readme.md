@@ -76,6 +76,14 @@ Public IP=new
 
 1. If the server you are installing this on is behind a firewall, be sure that you forward the external ports from the firewall to the ports on the server for the VPN (1194).
 
+-----
+## logs when needed
+
+add to server.conf in logging section: log-append openvpn.log
+
+-----
+## iptables
+
 iptables -t nat -L
 
 iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
@@ -83,7 +91,7 @@ iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
 iptables-save
 
 -----
-## Every 180 days or make a cronjob
+## Every 180 days or make a cronjob OR remove crl-verify from server.conf
 
 cd /etc/openvpn
 
