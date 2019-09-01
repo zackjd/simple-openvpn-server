@@ -87,15 +87,18 @@ systemctl restart openvpn
 ## no persistant ip's so I can multi connect as the same user
 
 ```
-comment this line in /server.conf
-#ifconfig-pool-persist ipp.txt
+//add this line so same cert can be used on mltpl devices:
+duplicate-cn
+//comment this line in /server.conf if you don't want persistant ip's
+//but I like it
+ifconfig-pool-persist ipp.txt
 ```
 
 -----
 ## logs uncomment log-append only when troubleshooting
 
 ```
-add to server.conf in logging section:
+//add to server.conf in logging section:
 status openvpn-status.log
 #log-append openvpn.log
 verb 3
