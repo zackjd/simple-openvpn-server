@@ -79,49 +79,42 @@ Public IP=new
 -----
 ## logs when needed
 
+```
 add to server.conf in logging section: log-append openvpn.log
+```
 
 -----
 ## iptables
 
 Write iptables on boot:
-
----
+```
 nano /etc/rc.local
 #!/bin/sh -e
 iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
 exit 0
-
----
+```
 
 Write iptables with iptables -persistant
-
----
+```
 apt-get install iptables-persistant
 iptables -t nat -L
 iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
 iptables-save
-
----
+```
 
 -----
 ## Every 180 days or make a cronjob OR remove crl-verify from server.conf
 
+```
 cd /etc/openvpn
-
 cd easy-rsa
-	
 ./easyrsa gen-crl
-
 cd pki
-
 chown www-data:www-data crl.pem
-
 chmod 755 crl.pem
-
 cp crl.pem /etc/openvpn/
-
 systemctl restart openvpn
+```
 
 -----
 
