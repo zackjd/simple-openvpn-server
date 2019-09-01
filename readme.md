@@ -113,6 +113,7 @@ cd pki
 chown www-data:www-data crl.pem
 chmod 755 crl.pem
 cp crl.pem /etc/openvpn/
+openssl crl -in /etc/openvpn/crl.pem -text (check expiration)
 systemctl restart openvpn
 ```
 
