@@ -110,7 +110,7 @@ cd /etc/openvpn/easy-rsa/
 ./easyrsa build-server-full server nopass
 
 # ./easyrsa build-client-full $CLIENT nopass
-./easyrsa gen-crl
+EASYRSA_CRL_DAYS=3650 ./easyrsa gen-crl
 
 # Move the stuff we need
 cp pki/ca.crt pki/private/ca.key pki/dh.pem pki/issued/server.crt pki/private/server.key /etc/openvpn/easy-rsa/pki/crl.pem /etc/openvpn
