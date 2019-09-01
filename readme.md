@@ -84,6 +84,21 @@ add to server.conf in logging section: log-append openvpn.log
 -----
 ## iptables
 
+Write iptables on boot:
+
+nano /etc/rc.local
+
+#!/bin/sh -e
+
+iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
+
+exit 0
+
+
+Write iptables with iptables -persistant
+
+apt-get install iptables-persistant
+
 iptables -t nat -L
 
 iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
