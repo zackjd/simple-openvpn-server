@@ -82,13 +82,26 @@ iptables -t nat -A POSTROUTING -s 10.0.8.0/24 -j SNAT --to 10.0.0.6
 
 iptables-save
 
+-----
+## Every 180 days or make a cronjob
+
 cd /etc/openvpn
 
-cd <easyrsa folder>
+cd easy-rsa
 	
 ./easyrsa gen-crl
 
+cd pki
+
+chown www-data:www-data crl.pem
+
+chmod 755 crl.pem
+
+cp crl.pem /etc/openvpn/
+
 systemctl restart openvpn
+
+-----
 
 ## Managing Profiles
 
