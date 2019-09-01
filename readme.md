@@ -103,12 +103,12 @@ iptables-save
 ```
 
 -----
-## Every 180 days or make a cronjob OR remove crl-verify from server.conf
+## Once after install and then Every 10 years
 
 ```
 cd /etc/openvpn
 cd easy-rsa
-./easyrsa gen-crl
+EASYRSA_CRL_DAYS=3650 ./easyrsa gen-crl
 cd pki
 chown www-data:www-data crl.pem
 chmod 755 crl.pem
