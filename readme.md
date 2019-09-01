@@ -77,10 +77,28 @@ Public IP=new
 1. If the server you are installing this on is behind a firewall, be sure that you forward the external ports from the firewall to the ports on the server for the VPN (1194).
 
 -----
-## logs when needed
+## restart openvpn
 
 ```
-add to server.conf in logging section: log-append openvpn.log
+systemctl restart openvpn
+```
+
+-----
+## no persistant ip's so I can multi connect as the same user
+
+```
+comment this line in /server.conf
+#ifconfig-pool-persist ipp.txt
+```
+
+-----
+## logs uncomment log-append only when troubleshooting
+
+```
+add to server.conf in logging section:
+status openvpn-status.log
+#log-append openvpn.log
+verb 3
 ```
 
 -----
